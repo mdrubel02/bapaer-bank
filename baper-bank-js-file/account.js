@@ -33,8 +33,12 @@ function updateBalance(amount, isadding){
 // handler deposit button 
 document.getElementById('deposit-button').addEventListener('click', function(){
     const amount=getInputValue('deposit-amount'); //getinputvalue function er maan ta amount variable er modhe rakha hoise
-    updateTotalValue('deposit-Box',amount); // eikhne function ta ke call kore argument hisabe id and ager variable er amount maan ta pathanu hoise
-    updateBalance(amount, true);
+    if(amount > 0 || typeof amount != 'number'){ //eita input er moddhe jodi kew -value and kuno string dey taole r eita kj korve na
+        updateTotalValue('deposit-Box',amount); // eikhne function ta ke call kore argument hisabe id and ager variable er amount maan ta pathanu hoise
+        updateBalance(amount, true);
+    }
+   
+    
 });
 
 
@@ -42,6 +46,8 @@ document.getElementById('deposit-button').addEventListener('click', function(){
 //handle withdraw button
 document.getElementById('withdraw-button').addEventListener('click', function(){
     const number=getInputValue('withdraw-amount'); //eita function ke call korar pore input er maan ta antese
+   if( number > 0){ //eita input er moddhe jodi kew -value and kuno string dey taole r eita kj korve na
     updateTotalValue('withdraw-Box', number); // eikhne function ta ke call kore argument hisabe id and ager variable er amount maan ta pathanu hoise
     updateBalance(number, false);
+   }
 })
