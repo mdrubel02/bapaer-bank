@@ -71,3 +71,22 @@ body{
     display: inline-block;
     cursor: pointer; 
 }
+
+/*==========resposive ======== */
+
+@media (max-width: 576px) { 
+    .login-from{
+        position: relative;
+        top: 0%;
+        left: 0%;
+        transform: translate(-0%, -0%);
+        width: 200px;
+        height: 250px;
+        background-color: rgba(32, 19, 19, 0.87);
+        border-radius: 5px;
+    }
+    .body{
+        height: 50px;
+        width: 100px;
+    }
+ }
