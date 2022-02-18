@@ -71,11 +71,34 @@
 
 .balane-add-input{
     display: grid;
-    
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 100px;
     text-align: center;
+    margin-top: 30px;
 }
 .deposit-input{
     background-color: rgb(206, 178, 142);
+    padding: 30px;
+    border-radius: 5px;
+}
+.input-amount{
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+.deposit-btn{
+    font-size: 20px;
+    background-color: crimson;
+    border: 0;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.deposit-title{
+    font-size: 30px;
+    color: white;
+
 }

@@ -5,6 +5,15 @@
 body{
     background-color: rgba(20, 16, 16, 0.87);
 }
+.login-title-head{
+    font-size: 35px;
+    color: rgb(22, 155, 155);
+    text-align: center;
+    margin-top: 50px;
+}
+.login{
+    color: crimson;
+}
 .login-from{
     position: absolute;
     top: 50%;
@@ -60,6 +69,5 @@ body{
     text-align: center;
     margin-top: 25px;
     display: inline-block;
-    cursor: pointer;
-
+    cursor: pointer; 
 }
