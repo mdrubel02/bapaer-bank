@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inner banking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+</head>
+<body>
+   <header>
+    <h2 class="text-6xl text-center mt-7 text-green-600 ">let's get some mooooooooooney!!!</h2>
+   </header>
+   <main class="w-3/4 mx-auto">
+       <section class="mt-10">
+           <div class="grid grid-cols-3 gap-4 ">
+               <div class="bg-rose-500 p-10 rounded">
+                   <h3 class="text-3xl text-white">Deposit</h3>
+                   <h4 id="deposit" class="text-4xl text-white">$ <span id="deposit-box">00</span></h4>
+               </div>
+               <div class="bg-fuchsia-600 p-10 rounded">
+                   <h3 class="text-3xl text-white">Withdraw</h3>
+                   <h4 class="text-4xl text-white">$ <span id="withdraw-current-box">00</span></h4>
+               </div>
+               <div class="bg-blue-600 p-10 rounded">
+                   <h3 class="text-3xl text-white">Balance</h3>
+                   <h4 class="text-4xl text-white">$<span id="withdraw-box">1300</span></h4>
+               </div>
+
+           </div>
+       </section>
+
+       <!-- input section  -->
+       <section class="mt-7">
+           <div class="grid grid-cols-2 gap-5">
+              <div class="">
+                 <h3 class="text-3xl text-teal-500 ">Please Deposit</h3>
+                 <input id="deposti-amount" class="block w-3/4 rounded-md p-2  my-5" type="text" placeholder="Amount Please">
+                 <button id="deposit-button" class="bg-rose-600 text-white rounded-md text-2xl p-1 mt-3 text-teal-500">Deposit</button>
+              </div>
+              <div class="">
+                 <h3 class="text-3xl text-teal-500 ">Please Deposit</h3>
+                 <input id="withdraw-amount" class="block w-3/4 rounded-md  p-2  my-5" type="text" placeholder="Amount Please">
+                 <button id="withdraw-button" class="bg-rose-600  rounded-md text-white text-2xl p-1 mt-3 text-teal-500">Withdraw</button>
+              </div>
+           </div>
+       </section>
+   </main>
+    
+    <script>
+        document.getElementById('deposit-button').addEventListener('click',function(){
+            const depositAmount=document.getElementById('deposti-amount');
+            const userAmount=depositAmount.value;
+            const userAddAmount=parseFloat(userAmount);
+            console.log(userAddAmount);
+
+            // add amonut box 
+
+            const depositBox=document.getElementById('deposit-box');
+            const depositAddAmount=depositBox.innerText;
+            const depostiAddAmountBox=parseFloat(depositAddAmount);
+            
+            const totalDepositAddAmount= depostiAddAmountBox + userAddAmount;
+            depositBox.innerText=totalDepositAddAmount;
+
+            // clear box 
+            depositAmount.value='';
+
+            // withdrawal box add new deposit amount 
+            const addWithdrawBox=document.getElementById('withdraw-box');
+            const currnetWithdrawBox=addWithdrawBox.innerText;
+            // console.log(currnetWithdrawBox);
+            const currentNewWithdrawBox=parseFloat(currnetWithdrawBox);
+            // console.log(currentNewWithdrawBox);
+
+            // add deposit balance and main balance 
+
+            addWithdrawBox.innerText=totalDepositAddAmount + currentNewWithdrawBox;
+
+           
+
+            
+        })
+
+
+        // withdraw funciton 
+        document.getElementById('withdraw-button').addEventListener('click', function(){
+            const withdrawInput=document.getElementById('withdraw-amount');
+            const userWithdrawalInput= withdrawInput.value;
+            const userWithdrawalNewInput=parseFloat(userWithdrawalInput);
+            console.log(userWithdrawalNewInput);
+
+             // dithdraw box add balance 
+             const withdrawCurrentBox=document.getElementById('withdraw-current-box');
+             const withdrawCurrentBoxAdd=withdrawCurrentBox.innerText;
+             
+             const userWithdraw=parseFloat(withdrawCurrentBoxAdd);
+             console.log(userWithdraw);
+             withdrawCurrentBox.innerText =userWithdrawalNewInput+userWithdraw;
+
+              // withdraw box add 
+            // const withdrawMainBox=document.getElementById('withdraw-box');
+            // const withdrawMainBoxText=withdrawMainBox.innerText;
+            // const withdrawMainBalance=parseFloat(withdrawMainBoxText);
+            // console.log(withdrawMainBalance);
+            
+
+            //  clear input 
+            withdrawInput.value='';
+
+           
+          
+
+        })
+    </script>
+</body>
+</html>

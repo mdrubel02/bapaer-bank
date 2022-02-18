@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+.box{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 150px;
+}
+.deposit-add{
+    width:200 px;
+    height: 120px;
+    background-color: rgb(209, 88, 8);
+    padding: 10px;
+    border-radius: 5px;
+}
+.deposit-add h3{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+}
+.deposit-add p{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+.withdraw-add{
+    width:200 px;
+    height: 120px;
+    background-color: rgb(4, 90, 50);
+    padding: 10px;
+    border-radius: 5px;
+}
+.withdraw-add h3{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+}
+.withdraw-add p{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+.main-balance-add{
+    width:200 px;
+    height: 120px;
+    background-color: crimson;
+    padding: 10px;
+    border-radius: 5px;
+}
+.main-balance-add h3{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+}
+.main-balance-add p{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+
+/* input fild  */
+
+.balane-add-input{
+    display: grid;
+    
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 100px;
+    text-align: center;
+}
+.deposit-input{
+    background-color: rgb(206, 178, 142);
+}
