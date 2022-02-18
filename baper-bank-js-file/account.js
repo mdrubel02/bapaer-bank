@@ -16,11 +16,17 @@ function updateTotalValue(fildId , amount){
     return newTotal; // eikhn thke new total er maan ta niya jabe
 }
 //totalupdate function 
-function updateBalance(amount){
+function updateBalance(amount, isadding){
     const balanceTag=document.getElementById('main-balance-Box');
     const balanceText=balanceTag.innerText;
     const prevousBalance=parseFloat(balanceText);
-    const newBalance=prevousBalance + amount
+    let newBalance;
+    if(isadding==true){
+         newBalance=prevousBalance + amount;
+    }
+    else{
+        newBalance=prevousBalance - amount;
+    }
     balanceTag.innerText=newBalance;
 }
 
@@ -28,7 +34,7 @@ function updateBalance(amount){
 document.getElementById('deposit-button').addEventListener('click', function(){
     const amount=getInputValue('deposit-amount'); //getinputvalue function er maan ta amount variable er modhe rakha hoise
     updateTotalValue('deposit-Box',amount); // eikhne function ta ke call kore argument hisabe id and ager variable er amount maan ta pathanu hoise
-    updateBalance(amount);
+    updateBalance(amount, true);
 });
 
 
@@ -37,4 +43,5 @@ document.getElementById('deposit-button').addEventListener('click', function(){
 document.getElementById('withdraw-button').addEventListener('click', function(){
     const number=getInputValue('withdraw-amount'); //eita function ke call korar pore input er maan ta antese
     updateTotalValue('withdraw-Box', number); // eikhne function ta ke call kore argument hisabe id and ager variable er amount maan ta pathanu hoise
+    updateBalance(number, false);
 })
